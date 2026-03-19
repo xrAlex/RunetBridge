@@ -207,7 +207,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/xrAlex/RunetBridge/refs/heads/main/dist/torrents/ru.yaml"
+    url: "https://raw.githubusercontent.com/xrAlex/RunetBridge/refs/heads/main/dist/torrent_trackers/ru.yaml"
     path: ./providers/ru-bundle-torrent-trackers.yaml
     interval: 86400  
 
