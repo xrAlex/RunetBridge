@@ -1,0 +1,20 @@
+payload:
+  - DOMAIN-SUFFIX,bohemia.net
+  - DOMAIN-SUFFIX,bistudio.com
+  - DOMAIN-SUFFIX,arma3.com
+  - DOMAIN-SUFFIX,armaplatform.com
+  - DOMAIN-SUFFIX,battleye.com
+  - DOMAIN-SUFFIX,makearmanotwar.com
+  - DOMAIN,reforger.armaplatform.com
+  - DOMAIN,www.reforger.armaplatform.com
+  - DOMAIN,dev.arma3.com
+  - DOMAIN,units.arma3.com
+  - DOMAIN,api-ar-game.bistudio.com
+  - DOMAIN,ar-gcp-cdn.bistudio.com
+  - DOMAIN,cms-cdn.bistudio.com
+  - DOMAIN,ar-api-origin.bistudio.com.cdn.cloudflare.net
+  - DOMAIN,1611202461.rsc.cdn77.org
+  - DOMAIN,cdn.battleye.com
+  - DOMAIN,battleye.b-cdn.net
+  - DOMAIN,arma2oa1.battleye.com
+  - DOMAIN,arma31.battleye.com

@@ -1,0 +1,23 @@
+payload:
+  - DOMAIN,api.live.prod.thehelldiversgame.com
+  - DOMAIN,gameguard.thehelldiversgame.com
+  - DOMAIN,cluster-a.playfabapi.com
+  - DOMAIN,helldivers2.playfabapi.com
+  - DOMAIN,testament.api.wwsga.me
+  - DOMAIN-SUFFIX,pss-cloud.net
+  - DOMAIN,mgr.gameguard.co.kr
+  - DOMAIN-SUFFIX,gameguard.co.kr
+  - DOMAIN,ocsp.digicert.com
+  - IP-CIDR,13.107.246.60/32,no-resolve
+  - IP-CIDR,3.39.44.27/32,no-resolve
+  - IP-CIDR,43.200.101.77/32,no-resolve
+  - IP-CIDR,3.37.183.188/32,no-resolve
+  - IP-CIDR,20.42.182.108/32,no-resolve
+  - IP-CIDR,20.42.182.110/32,no-resolve
+  - IP-CIDR,20.42.183.39/32,no-resolve
+  - IP-CIDR,44.245.124.232/32,no-resolve
+  - IP-CIDR,44.233.151.84/32,no-resolve
+  - IP-CIDR,54.244.195.76/32,no-resolve
+  - DOMAIN-SUFFIX,thehelldiversgame.com
+  - DOMAIN-SUFFIX,playfabapi.com
+  - DOMAIN-SUFFIX,wwsga.me

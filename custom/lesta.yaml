@@ -1,0 +1,22 @@
+payload:
+    - DOMAIN-SUFFIX,lesta.ru
+    - DOMAIN-SUFFIX,lesta.pw
+    - DOMAIN-SUFFIX,mntprod.net
+    - DOMAIN-SUFFIX,tanki.su
+    - DOMAIN-SUFFIX,tanksblitz.ru
+    - DOMAIN-SUFFIX,korabli.su
+    - DOMAIN-SUFFIX,login.p9.tanki.su 
+    - DOMAIN-SUFFIX,login.p8.tanki.su
+    - DOMAIN-SUFFIX,login.p6.tanki.su
+    - DOMAIN-SUFFIX,login.p5.tanki.su
+    - DOMAIN-SUFFIX,login.p4.tanki.su
+    - DOMAIN-SUFFIX,login.p3.tanki.su
+    - DOMAIN-SUFFIX,login.p2.tanki.su
+    - DOMAIN-SUFFIX,login.p1.tanki.su
+    - DOMAIN-SUFFIX,login0.tanksblitz.ru
+    - DOMAIN-SUFFIX,login1.tanksblitz.ru
+    - DOMAIN-SUFFIX,login2.tanksblitz.ru
+    - DOMAIN-SUFFIX,login3.tanksblitz.ru
+    - DOMAIN-SUFFIX,login4.tanksblitz.ru
+    - DOMAIN-SUFFIX,login5.tanksblitz.ru
+    - DOMAIN-SUFFIX,login1.korabli.su

@@ -1,0 +1,78 @@
+build:
+  derive_cidr: true
+  output: dist/ru.yaml
+
+providers:
+  - name: blackmatrix7
+    target_dir: providers/blackmatrix7
+    files:
+      - name: Epic.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
+      - name: Sony.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sony/Sony.yaml
+      - name: Xbox.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Xbox/Xbox.yaml
+      - name: Steam.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+      - name: EA.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.yaml
+      - name: Blizzard.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml      
+      - name: 2KGames.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/2KGames/2KGames.yaml
+      - name: Overwatch.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Overwatch/Overwatch.yaml
+      - name: Hearthstone.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Hearthstone/Hearthstone.yaml
+      - name: StarCraft2.mihomo
+        group: games
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/StarCraftII/StarCraftII.yaml
+      - name: GitHub.mihomo
+        url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml
+
+  - name: itdoginfo
+    target_dir: providers/itdoginfo
+    files:
+      - name: Only_from_russia.mihomo
+        url: https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/outside-clashx.lst
+
+  - name: v2fly
+    target_dir: providers/v2fly
+    files:
+      - name: 2ch.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/2ch
+      - name: 2gis.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/2gis
+      - name: Aviasales.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/aviasales
+      - name: Dzen.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/dzen
+      - name: Kinopoisk.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/kinopoisk
+      - name: Ozon.raw
+        url: https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/ozon
+
+  - name: hxehex
+    target_dir: providers/hxehex
+    files:
+      - name: Whitelist_domains.raw
+        url: https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/refs/heads/main/whitelist.txt
+      - name: Whitelist_cidr.raw
+        url: https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/refs/heads/main/cidrwhitelist.txt
+
+  - name: HYBB-rash
+    target_dir: providers/HYBB-rash
+    files:
+      - name: Torrent_trackers.mihomo
+        group: torrent_trackers
+        url: https://raw.githubusercontent.com/HYBB-rash/trackers_list_rule/refs/heads/main/dist/trackers_list_rule.yaml
+

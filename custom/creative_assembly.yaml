@@ -1,0 +1,9 @@
+# ruleset/totalwar_ca.yaml
+payload:
+  - DOMAIN-SUFFIX,totalwar.com
+  - DOMAIN-SUFFIX,creative-assembly.com
+  - IP-CIDR,143.204.187.147/32,no-resolve
+  - IP-CIDR,18.244.214.70/32,no-resolve
+  - IP-CIDR,18.66.102.107/32,no-resolve
+  - IP-CIDR,52.222.136.39/32,no-resolve
+  - IP-CIDR,104.18.34.98/32,no-resolve

@@ -1,0 +1,242 @@
+# Пример конфигурации для XKEEN (Роутеры Keenetic, NetCraze)
+
+port: 7890        # Локальный HTTP/HTTPS proxy-порт для клиентов
+socks-port: 7891  # Локальный SOCKS5 proxy-порт
+mixed-port: 1080  # Смешанный порт: одновременно HTTP(S) + SOCKS
+redir-port: 1182  # Порт для transparent proxy через REDIR (обычно Linux/OpenWrt)
+tproxy-port: 1181 # Порт для TProxy (прозрачная проксизация TCP/UDP, где поддерживается)
+
+allow-lan: true   # Разрешить подключения к proxy-портам с других устройств в LAN
+mode: rule        # Режим маршрутизации по rules
+log-level: silent # уровень логирвоания
+ipv6: false       # Не обрабатывать IPv6; если сеть и провайдер нормально поддерживают IPv6, можно включить true
+tcp-concurrent: true # Параллельно пробовать все IP-адреса, полученные из DNS, и брать первый успешный
+unified-delay: true  # Более честная проверка задержки: снижает влияние разницы рукопожатий между типами узлов
+
+geo-auto-update: true
+geo-update-interval: 168 # Интервал автообновления GEO-баз в часах; 24 = раз в сутки
+
+external-controller: 0.0.0.0:9090 # API/UI слушает на всех интерфейсах; удобно, но открывает доступ из LAN
+external-ui: ./metacubexd         # Каталог со статикой веб-интерфейса
+external-ui-url: 'https://github.com/MetaCubeX/metacubexd/releases/latest/download/compressed-dist.tgz' # URL для скачивания/обновления UI
+geodata-mode: true # Использовать GEO-базы формата .dat; false = .mmdb
+secret: '123'      # Пароль для доступа к external-controller/UI; лучше заменить на длинный случайный
+
+# --- ПРОФИЛЬ ---
+profile:
+  store-selected: true # Запоминать выбранные прокси/группы между перезапусками
+  store-fake-ip: true  # Сохранять таблицу fake-ip сопоставлений между перезапусками
+find-process-mode: 'off' # Не пытаться определять процесс-источник трафика; для роутеров это обычно правильно
+
+# --- СНИФФЕР ---
+sniffer:
+  enable: true              # Включить sniffing: попытка определить домен из трафика HTTP/TLS/QUIC
+  force-dns-mapping: false  # Принудительно досниффывать трафик, уже распознанный через redir-host; обычно не обязательно
+  parse-pure-ip: true       # Пытаться вытащить домен даже у соединений, которые идут на «голый» IP
+  override-destination: true # Подменять реальный адрес назначения результатом sniffing (обычно это и нужно)
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880] # На каких HTTP-портах пытаться распознавать хост
+      override-destination: true # Для HTTP явно разрешить замену адреса по результату sniffing
+    TLS:
+      ports: [443, 8443]     # На каких TLS-портах извлекать домен из SNI
+    QUIC:
+      ports: [443, 8443]     # На каких QUIC-портах пытаться определить домен
+
+# --- DNS ---
+dns:
+  enable: true              # Включить встроенный DNS mihomo; иначе будет использоваться системный DNS
+  listen: 0.0.0.0:7874      # На каком адресе/порту встроенный DNS слушает запросы
+  ipv6: false               # Не отвечать IPv6 AAAA-записями
+  cache-algorithm: arc      # Алгоритм кеша DNS; arc обычно лучше адаптируется, чем обычный lru
+  enhanced-mode: fake-ip    # Режим fake-ip: доменам выдаются служебные IP для последующей маршрутизации по имени
+  fake-ip-range: 198.18.0.1/16 # Служебный диапазон для fake-ip
+  use-hosts: true           # Учитывать записи из секции hosts в конфиге
+  respect-rules: true       # DNS-запросы тоже подчиняются rules; при этом желательно корректно задать proxy-server-nameserver
+
+  default-nameserver:       # DNS для разрешения доменов самих DNS-серверов
+    - 94.140.14.14
+    - 185.228.168.168
+    - 1.1.1.1
+    - 8.8.8.8
+
+  nameserver:               # Основные DNS-резолверы для обычных доменных запросов
+    - https://dns.adguard-dns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+
+  proxy-server-nameserver:  # DNS только для резолва доменов самих proxy узлов
+    - https://dns.adguard-dns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+
+  fake-ip-filter-mode: rule # Режим фильтра fake-ip по логике, похожей на rules: сверху вниз
+  fake-ip-filter:
+    - DOMAIN-WILDCARD,*.lan,real-ip
+    - DOMAIN-WILDCARD,*.local,real-ip
+    - DOMAIN,localhost,real-ip
+    - DOMAIN-SUFFIX,msftconnecttest.com,real-ip
+    - DOMAIN-SUFFIX,msftncsi.com,real-ip
+    - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,real-ip
+    - DOMAIN-SUFFIX,detectportal.firefox.com,real-ip
+    - DOMAIN-SUFFIX,pool.ntp.org,real-ip
+    - DOMAIN-SUFFIX,ntp.org,real-ip
+    - DOMAIN-SUFFIX,time.windows.com,real-ip
+    - DOMAIN-SUFFIX,3gppnetwork.org,real-ip
+    - MATCH,fake-ip # Всё остальное — через fake-ip (тоесть будет выдано IP прокси)
+
+# --- ПРОВАЙДЕРЫ ---
+proxy-providers:
+  VPN:
+    type: http
+    url: 'https://sub.top/***/mihomo' # URL подписки/удалённого списка прокси
+    path: ./proxy-providers/vpn.yaml  # Куда локально сохранять скачанный provider-файл
+    interval: 3200                    # Как часто обновлять provider, в секундах
+    skip-cert-verify: true            # Не проверять TLS-сертификат при подключении
+    exclude-filter: '(?i)(openwrt|russia|belarus)' # Исключать узлы по ключевым словам/регэкспу
+    header:                           # Дополнительные HTTP-заголовки при скачивании подписки
+      X-HWID:
+        - 'abc123'                    # Ваш идентификатор устройства, если провайдер подписки его требует
+      User-Agent:
+        - 'FlClash/v0.8.33 clash-verge/v1.6.6 Platform/android' # Подменённый User-Agent для совместимости с подпиской
+    health-check:
+      enable: true                    # Включить периодическую проверку доступности/задержки узлов
+      url: https://www.gstatic.com/generate_204 # Лёгкий URL для проверки соединения
+      interval: 300                   # Интервал проверки в секундах
+      timeout: 5000                   # Таймаут проверки в миллисекундах
+      lazy: true                      # Проверять только когда provider реально используется
+
+# --- ГРУППЫ ПРОКСИ ---
+proxy-groups:
+  - name: 'MANUAL'
+    type: select
+    use:
+      - VPN
+    proxies:
+      - DIRECT
+    hidden: false
+
+  - name: 'AUTO'
+    type: url-test    # Автоматически выбирать узел с наименьшей задержкой
+    use:
+      - VPN
+    url: 'https://www.gstatic.com/generate_204' # URL для проверки доступности/пинга
+    interval: 300     # Как часто перепроверять узлы, в секундах
+    tolerance: 30     # Допустимая разница в ms: не переключаться при слишком малом выигрыше
+    lazy: true        # Тестировать только когда группа реально используется
+    hidden: true      # Скрыть техническую группу из UI
+
+  - name: 'FAILOVER'
+    type: fallback    # Переключаться на следующий рабочий узел при недоступности текущего
+    use:
+      - VPN
+    url: 'https://www.gstatic.com/generate_204'
+    interval: 300 
+    lazy: true
+    hidden: true
+
+  - name: 'РФ Трафик'
+    type: select   
+    proxies:
+      - AUTO
+      - FAILOVER
+      - MANUAL
+      - DIRECT
+    icon: 'https://www.svgrepo.com/show/508628/flag-ru.svg'
+    
+  - name: 'Игры'
+    type: select     
+    proxies:
+      - AUTO
+      - FAILOVER
+      - MANUAL
+      - DIRECT
+    icon: 'https://www.svgrepo.com/show/167729/game-controller.svg'
+
+  - name: 'Торренты'
+    type: select     
+    proxies:
+      - AUTO
+      - FAILOVER
+      - MANUAL
+      - DIRECT
+    icon: 'https://www.svgrepo.com/show/418651/cdn-globe-locations.svg'
+    
+  - name: 'Остальной трафик'
+    type: select     
+    proxies:
+      - AUTO
+      - FAILOVER
+      - MANUAL
+      - DIRECT
+    icon: 'https://www.svgrepo.com/show/286180/world-internet.svg'
+    
+  - name: GLOBAL
+    type: select       # Общая глобальная группа; полезна для режима global или служебных правил
+    hidden: true 
+    proxies:
+      - AUTO
+      - MANUAL
+      - FAILOVER
+      - DIRECT
+      - РФ Трафик
+      - Остальной трафик
+
+geox-url:
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat" # Источник geosite.dat/списка доменов GEO
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"    # Источник geoip.dat
+
+rule-providers:
+  ru-bundle-main:
+    type: http
+    behavior: classical  # Формат набора правил: обычные Clash/Mihomo rules
+    format: yaml         # Файл ruleset в YAML-формате
+    url: "https://raw.githubusercontent.com/xrAlex/RunetBridge/refs/heads/main/dist/common/ru.yaml" # URL набора IP/CIDR-правил
+    path: ./providers/ru-bundle-main.yaml   # Локальный путь, куда ruleset будет сохранён
+    interval: 86400      # Интервал обновления, в секундах; 86400 = раз в сутки
+
+  ru-bundle-games:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/xrAlex/RunetBridge/refs/heads/main/dist/games/ru.yaml"
+    path: ./providers/ru-bundle-games.yaml
+    interval: 86400  
+
+  ru-bundle-torrent-trackers:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/xrAlex/RunetBridge/refs/heads/main/dist/torrents/ru.yaml"
+    path: ./providers/ru-bundle-torrent-trackers.yaml
+    interval: 86400  
+
+  adblock:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/refs/heads/main/oisd/small.mrs"
+    path: ./providers/adblock.yaml
+    interval: 86400  
+
+  corp: # Кастомные фильтры, например для коорпоративных ресурсов
+    type: inline
+    behavior: classical
+    format: text
+    payload:
+      - DOMAIN-SUFFIX,MY-CORP.com
+      - DOMAIN-SUFFIX,MY-CORP.ru
+      - DOMAIN-SUFFIX,MY-CORP2.ru
+      - DOMAIN-SUFFIX,MY-CORP3.ru
+      - DOMAIN-SUFFIX,express
+
+rules: # Порядок важен
+  - GEOIP,private,DIRECT,no-resolve         # Приватные/локальные IP не отправлять в прокси; no-resolve не делать лишний DNS-resolve
+  - RULE-SET,adblock,REJECT
+  - RULE-SET,corp,DIRECT 
+  
+  - RULE-SET,ru-bundle-games,Игры  # Лучше через процессы добавлять, но на роутере доступны только домены и IP
+  - RULE-SET,ru-bundle-torrent-trackers,Торренты # Аналогично
+  - RULE-SET,ru-bundle-main,РФ Трафик
+  
+  - MATCH,Остальной трафик                  # Всё остальное — в группу "Остальной трафик"
