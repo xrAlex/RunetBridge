@@ -623,6 +623,144 @@ func TestCollectConfiguredProviderRuleFilesUsesDeclaredEntriesOnly(t *testing.T)
 	}
 }
 
+func TestLoadConfigSupportsGroupedProviderFormat(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join(t.TempDir(), "conf.yaml")
+	content := strings.TrimSpace(`
+build:
+  output: dist/ru.yaml
+
+providers:
+  - name: sample
+    target_dir: providers/sample
+    files:
+      common.raw: https://example.com/common.raw
+    groups:
+      games:
+        steam.mihomo: https://example.com/steam.mihomo
+`) + "\n"
+	if err := os.WriteFile(path, []byte(content), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+
+	cfg, err := loadConfig(path)
+	if err != nil {
+		t.Fatalf("loadConfig returned error: %v", err)
+	}
+
+	want := []ProviderConfig{
+		{
+			Name:      "sample",
+			TargetDir: filepath.Clean(filepath.Join("providers", "sample")),
+			Files: []RemoteFile{
+				{Name: "common.raw", Group: "common", URL: "https://example.com/common.raw"},
+				{Name: "steam.mihomo", Group: "games", URL: "https://example.com/steam.mihomo"},
+			},
+		},
+	}
+
+	if !reflect.DeepEqual(cfg.Providers, want) {
+		t.Fatalf("unexpected providers after load:\n got: %#v\nwant: %#v", cfg.Providers, want)
+	}
+}
+
+func TestLoadConfigRejectsLegacyProviderFileListFormat(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join(t.TempDir(), "conf.yaml")
+	content := strings.TrimSpace(`
+providers:
+  - name: sample
+    target_dir: providers/sample
+    files:
+      - name: old.raw
+        url: https://example.com/old.raw
+`) + "\n"
+	if err := os.WriteFile(path, []byte(content), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+
+	if _, err := loadConfig(path); err == nil {
+		t.Fatal("loadConfig unexpectedly accepted legacy provider file list format")
+	}
+}
+
+func TestLoadConfigRejectsLegacyCustomFilesFormat(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join(t.TempDir(), "conf.yaml")
+	content := strings.TrimSpace(`
+custom:
+  target_dir: custom
+  files:
+    - name: default.yaml
+`) + "\n"
+	if err := os.WriteFile(path, []byte(content), 0o644); err != nil {
+		t.Fatalf("write config: %v", err)
+	}
+
+	if _, err := loadConfig(path); err == nil {
+		t.Fatal("loadConfig unexpectedly accepted legacy custom files format")
+	}
+}
+
+func TestCollectConfiguredCustomRuleFilesUsesDeclaredEntriesOnly(t *testing.T) {
+	t.Parallel()
+
+	cfg := Config{
+		Custom: CustomConfig{
+			TargetDir: filepath.Join("custom"),
+			Groups: map[string][]string{
+				"Games":  {"steam.yaml"},
+				"Common": {"default.yaml"},
+			},
+		},
+	}
+
+	cfg.Custom = normalizeCustomConfig(cfg.Custom)
+
+	got := collectConfiguredCustomRuleFiles(cfg)
+
+	want := []ruleFile{
+		{
+			Path:  filepath.Clean(filepath.Join("custom", "default.yaml")),
+			Group: "common",
+		},
+		{
+			Path:  filepath.Clean(filepath.Join("custom", "steam.yaml")),
+			Group: "games",
+		},
+	}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("unexpected custom rule files:\n got: %#v\nwant: %#v", got, want)
+	}
+}
+
+func TestCollectRuleFilesDoesNotAutoDiscoverCustomWhenCustomNotConfigured(t *testing.T) {
+	dir := t.TempDir()
+	customDir := filepath.Join(dir, "custom")
+	if err := os.MkdirAll(customDir, 0o755); err != nil {
+		t.Fatalf("create custom dir: %v", err)
+	}
+	customPath := filepath.Join(customDir, "default.yaml")
+	if err := os.WriteFile(customPath, []byte("payload:\n  - DOMAIN-SUFFIX,example.com\n"), 0o644); err != nil {
+		t.Fatalf("write custom file: %v", err)
+	}
+
+	t.Chdir(dir)
+
+	got, err := collectRuleFiles(Config{})
+	if err != nil {
+		t.Fatalf("collectRuleFiles returned error: %v", err)
+	}
+
+	if len(got) != 0 {
+		t.Fatalf("collectRuleFiles unexpectedly auto-discovered custom files: %#v", got)
+	}
+}
+
 func TestValidateConfigRejectsUnsafeFileNames(t *testing.T) {
 	t.Parallel()
 
@@ -643,6 +781,37 @@ func TestValidateConfigRejectsUnsafeFileNames(t *testing.T) {
 	}
 }
 
+func TestValidateConfigRejectsCustomTargetDirWithoutGroups(t *testing.T) {
+	t.Parallel()
+
+	cfg := Config{
+		Custom: CustomConfig{
+			TargetDir: "custom",
+		},
+	}
+
+	if err := validateConfig(cfg); err == nil {
+		t.Fatal("validateConfig unexpectedly accepted custom target_dir without groups")
+	}
+}
+
+func TestValidateConfigRejectsUnsafeCustomFileNames(t *testing.T) {
+	t.Parallel()
+
+	cfg := Config{
+		Custom: CustomConfig{
+			TargetDir: "custom",
+			Groups: map[string][]string{
+				"common": {"../escape.yaml"},
+			},
+		},
+	}
+
+	if err := validateConfig(cfg); err == nil {
+		t.Fatal("validateConfig unexpectedly accepted unsafe custom file name")
+	}
+}
+
 func TestValidateConfigRejectsUnsafeGroupNames(t *testing.T) {
 	t.Parallel()
 
@@ -660,6 +829,25 @@ func TestValidateConfigRejectsUnsafeGroupNames(t *testing.T) {
 
 	if err := validateConfig(cfg); err == nil {
 		t.Fatal("validateConfig unexpectedly accepted unsafe group name")
+	}
+}
+
+func TestValidateConfigRejectsUnsafeCustomGroupNames(t *testing.T) {
+	t.Parallel()
+
+	cfg := Config{
+		Custom: CustomConfig{
+			TargetDir: "custom",
+			Groups: map[string][]string{
+				"../games": {"safe.yaml"},
+			},
+		},
+	}
+
+	cfg.Custom = normalizeCustomConfig(cfg.Custom)
+
+	if err := validateConfig(cfg); err == nil {
+		t.Fatal("validateConfig unexpectedly accepted unsafe custom group name")
 	}
 }
 

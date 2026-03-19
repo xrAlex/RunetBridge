@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/fs"
 	"net"
 	"net/http"
 	"net/netip"
@@ -50,6 +49,7 @@ type Options struct {
 
 type Config struct {
 	Build     BuildConfig      `yaml:"build"`
+	Custom    CustomConfig     `yaml:"custom"`
 	Providers []ProviderConfig `yaml:"providers"`
 }
 
@@ -58,16 +58,88 @@ type BuildConfig struct {
 	DeriveCIDR bool   `yaml:"derive_cidr"`
 }
 
+type CustomConfig struct {
+	TargetDir string              `yaml:"-"`
+	Groups    map[string][]string `yaml:"-"`
+}
+
 type ProviderConfig struct {
 	Name      string       `yaml:"name"`
 	TargetDir string       `yaml:"target_dir"`
-	Files     []RemoteFile `yaml:"files"`
+	Files     []RemoteFile `yaml:"-"`
 }
 
 type RemoteFile struct {
 	Name  string `yaml:"name"`
 	Group string `yaml:"group,omitempty"`
 	URL   string `yaml:"url"`
+}
+
+func (c *CustomConfig) UnmarshalYAML(node *yaml.Node) error {
+	type rawCustomConfig struct {
+		TargetDir string    `yaml:"target_dir"`
+		Groups    yaml.Node `yaml:"groups"`
+	}
+
+	if isZeroYAMLNode(*node) {
+		return nil
+	}
+	if err := ensureAllowedYAMLKeys(*node, map[string]struct{}{
+		"target_dir": {},
+		"groups":     {},
+	}); err != nil {
+		return err
+	}
+
+	var raw rawCustomConfig
+	if err := node.Decode(&raw); err != nil {
+		return err
+	}
+
+	groups, err := decodeCustomGroupsNode(raw.Groups)
+	if err != nil {
+		return fmt.Errorf("decode custom groups: %w", err)
+	}
+
+	c.TargetDir = raw.TargetDir
+	c.Groups = groups
+	return nil
+}
+
+func (p *ProviderConfig) UnmarshalYAML(node *yaml.Node) error {
+	type rawProviderConfig struct {
+		Name      string    `yaml:"name"`
+		TargetDir string    `yaml:"target_dir"`
+		Files     yaml.Node `yaml:"files"`
+		Groups    yaml.Node `yaml:"groups"`
+	}
+
+	var raw rawProviderConfig
+	if err := ensureAllowedYAMLKeys(*node, map[string]struct{}{
+		"name":       {},
+		"target_dir": {},
+		"files":      {},
+		"groups":     {},
+	}); err != nil {
+		return err
+	}
+	if err := node.Decode(&raw); err != nil {
+		return err
+	}
+
+	files, err := decodeProviderFilesNode(raw.Files, "")
+	if err != nil {
+		return fmt.Errorf("decode provider files: %w", err)
+	}
+	groupFiles, err := decodeProviderGroupsNode(raw.Groups)
+	if err != nil {
+		return fmt.Errorf("decode provider groups: %w", err)
+	}
+
+	p.Name = raw.Name
+	p.TargetDir = raw.TargetDir
+	p.Files = append(files, groupFiles...)
+	return nil
 }
 
 type payloadFile struct {
@@ -298,9 +370,109 @@ func loadConfig(path string) (Config, error) {
 			cfg.Providers[i].Files[j].Group = normalizeRuleGroup(cfg.Providers[i].Files[j].Group)
 		}
 	}
+	cfg.Custom = normalizeCustomConfig(cfg.Custom)
 	cfg.Build = normalizeBuildConfigPaths(cfg.Build)
 
 	return cfg, nil
+}
+
+func normalizeCustomConfig(cfg CustomConfig) CustomConfig {
+	cfg.TargetDir = normalizeOptionalPath(cfg.TargetDir)
+	if len(cfg.Groups) == 0 {
+		return cfg
+	}
+
+	normalizedGroups := make(map[string][]string, len(cfg.Groups))
+	for group, files := range cfg.Groups {
+		group = normalizeRuleGroup(group)
+		normalizedGroups[group] = append(normalizedGroups[group], files...)
+	}
+	cfg.Groups = normalizedGroups
+	return cfg
+}
+
+func decodeProviderGroupsNode(node yaml.Node) ([]RemoteFile, error) {
+	if isZeroYAMLNode(node) {
+		return nil, nil
+	}
+	if node.Kind != yaml.MappingNode {
+		return nil, fmt.Errorf("expected mapping node, got %v", node.Kind)
+	}
+
+	files := make([]RemoteFile, 0, len(node.Content))
+	for i := 0; i+1 < len(node.Content); i += 2 {
+		group := strings.TrimSpace(node.Content[i].Value)
+		groupFiles, err := decodeProviderFilesNode(*node.Content[i+1], group)
+		if err != nil {
+			return nil, fmt.Errorf("group %q: %w", group, err)
+		}
+		files = append(files, groupFiles...)
+	}
+
+	return files, nil
+}
+
+func decodeCustomGroupsNode(node yaml.Node) (map[string][]string, error) {
+	if isZeroYAMLNode(node) {
+		return nil, nil
+	}
+	if node.Kind != yaml.MappingNode {
+		return nil, fmt.Errorf("expected mapping node, got %v", node.Kind)
+	}
+
+	var groups map[string][]string
+	if err := node.Decode(&groups); err != nil {
+		return nil, err
+	}
+
+	return groups, nil
+}
+
+func decodeProviderFilesNode(node yaml.Node, defaultGroup string) ([]RemoteFile, error) {
+	if isZeroYAMLNode(node) {
+		return nil, nil
+	}
+
+	if node.Kind != yaml.MappingNode {
+		return nil, fmt.Errorf("expected mapping node, got %v", node.Kind)
+	}
+
+	files := make([]RemoteFile, 0, len(node.Content)/2)
+	for i := 0; i+1 < len(node.Content); i += 2 {
+		nameNode := node.Content[i]
+		urlNode := node.Content[i+1]
+		if urlNode.Kind != yaml.ScalarNode {
+			return nil, fmt.Errorf("file %q must map to scalar url", nameNode.Value)
+		}
+		files = append(files, RemoteFile{
+			Name:  strings.TrimSpace(nameNode.Value),
+			Group: defaultGroup,
+			URL:   strings.TrimSpace(urlNode.Value),
+		})
+	}
+	return files, nil
+}
+
+func isZeroYAMLNode(node yaml.Node) bool {
+	return node.Kind == 0 && node.Tag == "" && node.Value == "" && len(node.Content) == 0
+}
+
+func ensureAllowedYAMLKeys(node yaml.Node, allowed map[string]struct{}) error {
+	if isZeroYAMLNode(node) {
+		return nil
+	}
+	if node.Kind != yaml.MappingNode {
+		return fmt.Errorf("expected mapping node, got %v", node.Kind)
+	}
+
+	for i := 0; i+1 < len(node.Content); i += 2 {
+		key := strings.TrimSpace(node.Content[i].Value)
+		if _, ok := allowed[key]; !ok {
+			return fmt.Errorf("unsupported field %q", key)
+		}
+	}
+
+	return nil
 }
 
 func validateConfig(cfg Config) error {
@@ -333,6 +505,33 @@ func validateConfig(cfg Config) error {
 				return fmt.Errorf("provider %q has duplicate file %q", provider.Name, file.Name)
 			}
 			seenFiles[file.Name] = struct{}{}
+		}
+	}
+
+	if cfg.Custom.TargetDir != "" && len(cfg.Custom.Groups) == 0 {
+		return errors.New("custom has target_dir but no groups")
+	}
+	if len(cfg.Custom.Groups) > 0 && cfg.Custom.TargetDir == "" {
+		return errors.New("custom has empty target_dir")
+	}
+
+	seenCustomFiles := map[string]struct{}{}
+	for group, files := range cfg.Custom.Groups {
+		for _, fileName := range files {
+			fileName = strings.TrimSpace(fileName)
+			if fileName == "" {
+				return fmt.Errorf("custom group %q has empty file entry", group)
+			}
+			if filepath.Clean(fileName) != filepath.Base(fileName) {
+				return fmt.Errorf("custom has unsafe file name %q", fileName)
+			}
+			if !isSafeRuleGroup(group) {
+				return fmt.Errorf("custom group has unsafe name %q", group)
+			}
+			if _, exists := seenCustomFiles[fileName]; exists {
+				return fmt.Errorf("custom has duplicate file %q", fileName)
+			}
+			seenCustomFiles[fileName] = struct{}{}
 		}
 	}
 
@@ -1368,27 +1567,14 @@ func (b builder) lookupDomainIPs(ctx context.Context, host string) ([]netip.Addr
 }
 
 func collectRuleFiles(cfg Config) ([]ruleFile, error) {
-	var files []ruleFile
-
 	providerFiles, err := collectConfiguredProviderRuleFiles(cfg)
 	if err != nil {
 		return nil, err
 	}
+	customFiles := collectConfiguredCustomRuleFiles(cfg)
+	files := make([]ruleFile, 0, len(providerFiles)+len(customFiles))
 	files = append(files, providerFiles...)
-
-	customFiles, err := walkRuleFiles("custom", func(path string) bool {
-		ext := strings.ToLower(filepath.Ext(path))
-		return ext == ".yaml" || ext == ".yml" || ext == ".mihomo"
-	})
-	if err != nil {
-		return nil, err
-	}
-	for _, path := range customFiles {
-		files = append(files, ruleFile{
-			Path:  path,
-			Group: defaultRuleGroup,
-		})
-	}
+	files = append(files, customFiles...)
 
 	sort.Slice(files, func(i, j int) bool {
 		if files[i].Path == files[j].Path {
@@ -1397,6 +1583,43 @@ func collectRuleFiles(cfg Config) ([]ruleFile, error) {
 		return files[i].Path < files[j].Path
 	})
 	return files, nil
+}
+
+func collectConfiguredCustomRuleFiles(cfg Config) []ruleFile {
+	if len(cfg.Custom.Groups) == 0 {
+		return nil
+	}
+
+	groupNames := make([]string, 0, len(cfg.Custom.Groups))
+	for group := range cfg.Custom.Groups {
+		groupNames = append(groupNames, group)
+	}
+	sort.Strings(groupNames)
+
+	totalFiles := 0
+	for _, files := range cfg.Custom.Groups {
+		totalFiles += len(files)
+	}
+
+	files := make([]ruleFile, 0, totalFiles)
+	seen := map[string]struct{}{}
+
+	for _, group := range groupNames {
+		for _, fileName := range cfg.Custom.Groups[group] {
+			path := filepath.Join(cfg.Custom.TargetDir, fileName)
+			path = filepath.Clean(path)
+			if _, exists := seen[path]; exists {
+				continue
+			}
+			seen[path] = struct{}{}
+			files = append(files, ruleFile{
+				Path:  path,
+				Group: normalizeRuleGroup(group),
+			})
+		}
+	}
+
+	return files
 }
 
 func collectConfiguredProviderRuleFiles(cfg Config) ([]ruleFile, error) {
@@ -1433,38 +1656,6 @@ func providerRuleOutputPath(targetDir, fileName string) (string, error) {
 	default:
 		return "", fmt.Errorf("unsupported provider file extension %q", filepath.Ext(path))
 	}
-}
-
-func walkRuleFiles(root string, include func(path string) bool) ([]string, error) {
-	info, err := os.Stat(root)
-	if errors.Is(err, os.ErrNotExist) {
-		return nil, nil
-	}
-	if err != nil {
-		return nil, err
-	}
-	if !info.IsDir() {
-		return nil, fmt.Errorf("%s is not a directory", root)
-	}
-
-	files := make([]string, 0)
-	err = filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
-		if d.IsDir() {
-			return nil
-		}
-		if include(path) {
-			files = append(files, filepath.Clean(path))
-		}
-		return nil
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return files, nil
 }
 
 func writePayloadFile(path string, rules []string, label string, dedupe bool) error {
