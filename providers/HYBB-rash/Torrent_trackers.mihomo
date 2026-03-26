@@ -16,13 +16,11 @@ payload:
     - DOMAIN-SUFFIX,nyaa.tracker.wf
     - DOMAIN-SUFFIX,open.acgtracker.com
     - DOMAIN-SUFFIX,s1130639.ha009.t.mydomain.zone
-    - DOMAIN-SUFFIX,s1130642.ha014.t.mydomain.zone
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.cubonegro.org
     - DOMAIN-SUFFIX,tracker.darkness.services
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
@@ -43,25 +41,24 @@ payload:
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
     - DOMAIN-SUFFIX,cny.fan
-    - DOMAIN-SUFFIX,colibri.parrot.run
     - DOMAIN-SUFFIX,http1.torrust-tracker-demo.com
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,shahidrazi.online
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,tr.abiir.top
-    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tr.zukizuki.org
     - DOMAIN-SUFFIX,tracker-zhuqiy.xn--1r3au8b.space
+    - DOMAIN-SUFFIX,tracker.7471.top
     - DOMAIN-SUFFIX,tracker.bt4g.com
     - DOMAIN-SUFFIX,tracker.gcrenwp.top
     - DOMAIN-SUFFIX,tracker.ghostchu-services.top
-    - DOMAIN-SUFFIX,tracker.iperson.xyz
     - DOMAIN-SUFFIX,tracker.kuroy.me
     - DOMAIN-SUFFIX,tracker.manager.v6.navy
     - DOMAIN-SUFFIX,tracker.moeblog.cn
     - DOMAIN-SUFFIX,tracker.moeking.me
+    - DOMAIN-SUFFIX,tracker.mrhei.tech
     - DOMAIN-SUFFIX,tracker.nekomi.cn
     - DOMAIN-SUFFIX,tracker.pmman.tech
     - DOMAIN-SUFFIX,tracker.qingwapt.org
@@ -87,6 +84,7 @@ payload:
     - DOMAIN-SUFFIX,martin-gebhardt.eu
     - DOMAIN-SUFFIX,node01.torrentonline.cc
     - DOMAIN-SUFFIX,node01.trackerstatus.live
+    - DOMAIN-SUFFIX,node02.madtia.cc
     - DOMAIN-SUFFIX,ns575949.ip-51-222-82.net
     - DOMAIN-SUFFIX,open.demonii.com
     - DOMAIN-SUFFIX,open.demonoid.ch
@@ -100,7 +98,7 @@ payload:
     - DOMAIN-SUFFIX,speedtest.iperson.xyz
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentclub.online
-    - DOMAIN-SUFFIX,torrentvpn.club
+    - DOMAIN-SUFFIX,tr4ck3r.duckdns.org
     - DOMAIN-SUFFIX,tracker-de-2.cutie.dating
     - DOMAIN-SUFFIX,tracker-udp.gbitt.info
     - DOMAIN-SUFFIX,tracker.004430.xyz
