@@ -2,4 +2,6 @@
 # DO NOT EDIT.
 payload:
     - DOMAIN-SUFFIX,dzen.ru
+    - DOMAIN-SUFFIX,log.dzen.ru
+    - DOMAIN-SUFFIX,ms.dzen.ru
     - DOMAIN-SUFFIX,dzeninfra.ru
