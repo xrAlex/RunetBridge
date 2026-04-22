@@ -8,13 +8,16 @@ payload:
     - IP-CIDR,64.226.122.118/32,no-resolve
     - DOMAIN-SUFFIX,aboutbeautifulgallopinghorsesinthegreenpasture.online
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
+    - DOMAIN-SUFFIX,bt.poletracker.org
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
     - DOMAIN-SUFFIX,bvarf.tracker.sh
     - DOMAIN-SUFFIX,nyaa.tracker.wf
+    - DOMAIN-SUFFIX,shubt.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
+    - DOMAIN-SUFFIX,tr.kxmp.cf
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.bt4g.com
     - DOMAIN-SUFFIX,tracker.cutie.dating
@@ -23,20 +26,22 @@ payload:
     - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.exe.in.th
     - DOMAIN-SUFFIX,tracker.ghostchu-services.top
+    - DOMAIN-SUFFIX,tracker.lintk.me
     - DOMAIN-SUFFIX,tracker.mywaifu.best
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
-    - DOMAIN-SUFFIX,tracker.skyts.net
-    - DOMAIN-SUFFIX,tracker.tvunderground.org.ru
+    - DOMAIN-SUFFIX,tracker.vanitycore.co
     - DOMAIN-SUFFIX,tracker.waaa.moe
+    - DOMAIN-SUFFIX,tracker.xiaoduola.xyz
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
+    - DOMAIN-SUFFIX,tracker.zhuqiy.dgj055.icu
     - DOMAIN-SUFFIX,tracker1.itzmx.com
     - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker3.ctix.cn
-    - DOMAIN-SUFFIX,www.wareztorrent.com
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
+    - DOMAIN-SUFFIX,cny.fan
     - DOMAIN-SUFFIX,http1.torrust-tracker-demo.com
     - DOMAIN-SUFFIX,opentracker.8880085.xyz
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
@@ -83,6 +88,7 @@ payload:
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,open.stealth.si
     - DOMAIN-SUFFIX,opentor.org
+    - DOMAIN-SUFFIX,opentracker.io
     - DOMAIN-SUFFIX,p4p.arenabg.com
     - DOMAIN-SUFFIX,rekcart.duckdns.org
     - DOMAIN-SUFFIX,retracker.hotplug.ru
@@ -107,6 +113,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.fnix.net
     - DOMAIN-SUFFIX,tracker.gmi.gd
     - DOMAIN-SUFFIX,tracker.hismz.cn
+    - DOMAIN-SUFFIX,tracker.huadongblower.xyz
     - DOMAIN-SUFFIX,tracker.iperson.xyz
     - DOMAIN-SUFFIX,tracker.ixuexi.click
     - DOMAIN-SUFFIX,tracker.nyaa.vc
@@ -124,7 +131,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.tvunderground.org.ru
     - DOMAIN-SUFFIX,tracker.wildkat.net
-    - DOMAIN-SUFFIX,tracker.yume-hatsuyuki.moe
     - DOMAIN-SUFFIX,tracker1.itzmx.com
     - DOMAIN-SUFFIX,tracker2.itzmx.com
     - DOMAIN-SUFFIX,tracker3.itzmx.com
@@ -133,7 +139,6 @@ payload:
     - DOMAIN-SUFFIX,uabits.today
     - DOMAIN-SUFFIX,udp.tracker.projectk.org
     - DOMAIN-SUFFIX,udp1.torrust-tracker-demo.com
-    - DOMAIN-SUFFIX,utracker.ghostchu-services.top
     - DOMAIN-SUFFIX,vito-tracker.duckdns.org
     - DOMAIN-SUFFIX,wepzone.net
     - DOMAIN-SUFFIX,whybother.torrentonline.cc
