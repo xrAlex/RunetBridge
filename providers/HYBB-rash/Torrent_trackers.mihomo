@@ -4,16 +4,13 @@ payload:
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
     - IP-CIDR,207.241.226.111/32,no-resolve
-    - IP-CIDR,64.226.122.118/32,no-resolve
+    - IP-CIDR,207.241.231.226/32,no-resolve
     - DOMAIN-SUFFIX,aboutbeautifulgallopinghorsesinthegreenpasture.online
-    - DOMAIN-SUFFIX,asiatorrent.giize.com
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,bt1.archive.org
-    - DOMAIN-SUFFIX,bt1.xxxxbt.cc
+    - DOMAIN-SUFFIX,bt2.archive.org
     - DOMAIN-SUFFIX,bvarf.tracker.sh
     - DOMAIN-SUFFIX,nyaa.tracker.wf
-    - DOMAIN-SUFFIX,open.trackerlist.xyz
-    - DOMAIN-SUFFIX,seeders-paradise.org
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
@@ -24,19 +21,18 @@ payload:
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.exe.in.th
-    - DOMAIN-SUFFIX,tracker.ghostchu-services.top
     - DOMAIN-SUFFIX,tracker.mywaifu.best
+    - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
     - DOMAIN-SUFFIX,tracker.skyts.net
-    - DOMAIN-SUFFIX,tracker.tritan.gg
-    - DOMAIN-SUFFIX,tracker.vanitycore.co
     - DOMAIN-SUFFIX,tracker.waaa.moe
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
     - DOMAIN-SUFFIX,tracker1.itzmx.com
     - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker3.ctix.cn
+    - DOMAIN-SUFFIX,vito-tracker.space
     - DOMAIN-SUFFIX,www.wareztorrent.com
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
@@ -46,7 +42,6 @@ payload:
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,shahidrazi.online
     - DOMAIN-SUFFIX,t.213891.xyz
-    - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.abiir.top
     - DOMAIN-SUFFIX,tr.abir.ga
@@ -90,7 +85,9 @@ payload:
     - DOMAIN-SUFFIX,retracker.hotplug.ru
     - DOMAIN-SUFFIX,seedpeer.net
     - DOMAIN-SUFFIX,t.overflow.biz
+    - DOMAIN-SUFFIX,torrent.bowed.net
     - DOMAIN-SUFFIX,torrentclub.online
+    - DOMAIN-SUFFIX,tr4ck3r.duckdns.org
     - DOMAIN-SUFFIX,tracker-udp.gbitt.info
     - DOMAIN-SUFFIX,tracker.004430.xyz
     - DOMAIN-SUFFIX,tracker.1h.is
@@ -135,6 +132,7 @@ payload:
     - DOMAIN-SUFFIX,udp1.torrust-tracker-demo.com
     - DOMAIN-SUFFIX,utracker.ghostchu-services.top
     - DOMAIN-SUFFIX,vito-tracker.duckdns.org
+    - DOMAIN-SUFFIX,vito-tracker.space
     - DOMAIN-SUFFIX,wepzone.net
     - DOMAIN-SUFFIX,whybother.torrentonline.cc
     - DOMAIN-SUFFIX,www.nartlof.com
