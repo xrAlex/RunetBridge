@@ -6,6 +6,7 @@ payload:
     - IP-CIDR,207.241.226.111/32,no-resolve
     - IP-CIDR,207.241.231.226/32,no-resolve
     - DOMAIN-SUFFIX,aboutbeautifulgallopinghorsesinthegreenpasture.online
+    - DOMAIN-SUFFIX,asiatorrent.giize.com
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
@@ -25,7 +26,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.waaa.moe
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
-    - DOMAIN-SUFFIX,tracker.zhuqiy.dgj055.icu
     - DOMAIN-SUFFIX,tracker1.itzmx.com
     - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker3.ctix.cn
@@ -37,21 +37,20 @@ payload:
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,t.213891.xyz
+    - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.abiir.top
+    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.7471.top
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.cangku.moe
     - DOMAIN-SUFFIX,tracker.gcrenwp.top
     - DOMAIN-SUFFIX,tracker.kuroy.me
-    - DOMAIN-SUFFIX,tracker.lenition.de
     - DOMAIN-SUFFIX,tracker.manager.v6.navy
-    - DOMAIN-SUFFIX,tracker.moeblog.cn
-    - DOMAIN-SUFFIX,tracker.moeking.me
     - DOMAIN-SUFFIX,tracker.nekomi.cn
     - DOMAIN-SUFFIX,tracker.pmman.tech
     - DOMAIN-SUFFIX,tracker.qingwapt.org
+    - DOMAIN-SUFFIX,tracker.samcze.pl
     - DOMAIN-SUFFIX,tracker.yemekyedim.com
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
     - DOMAIN-SUFFIX,tracker1.520.jp
@@ -64,9 +63,9 @@ payload:
     - DOMAIN-SUFFIX,bandito.byterunner.io
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,cerf.cs.umd.edu
-    - DOMAIN-SUFFIX,coeus.torrentonline.cc
     - DOMAIN-SUFFIX,evan.im
     - DOMAIN-SUFFIX,exodus.desync.com
+    - DOMAIN-SUFFIX,explodie.org
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
     - DOMAIN-SUFFIX,leet-tracker.moe
     - DOMAIN-SUFFIX,martin-gebhardt.eu
@@ -81,6 +80,7 @@ payload:
     - DOMAIN-SUFFIX,rekcart.duckdns.org
     - DOMAIN-SUFFIX,retracker.hotplug.ru
     - DOMAIN-SUFFIX,seedpeer.net
+    - DOMAIN-SUFFIX,speedtest.iperson.xyz
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentclub.online
     - DOMAIN-SUFFIX,torrents.tmtime.dev
@@ -115,7 +115,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.theoks.net
     - DOMAIN-SUFFIX,tracker.torrent.eu.org
     - DOMAIN-SUFFIX,tracker.torrentclaw.com
-    - DOMAIN-SUFFIX,tracker.torrust-demo.com
     - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.wildkat.net
     - DOMAIN-SUFFIX,tracker.yume-hatsuyuki.moe
