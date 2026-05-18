@@ -2,6 +2,7 @@
 # DO NOT EDIT.
 payload:
     - DOMAIN-SUFFIX,004430.xyz
+    - DOMAIN-SUFFIX,0d.kebhana.mx
     - DOMAIN-SUFFIX,1337.abcvg.info
     - IP-CIDR,207.241.226.111/32,no-resolve
     - IP-CIDR,207.241.231.226/32,no-resolve
@@ -11,24 +12,22 @@ payload:
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
     - DOMAIN-SUFFIX,bvarf.tracker.sh
-    - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
+    - DOMAIN-SUFFIX,home.yxgz.club
     - DOMAIN-SUFFIX,nyaa.tracker.wf
-    - DOMAIN-SUFFIX,retracker.spark-rostov.ru
+    - DOMAIN-SUFFIX,shubt.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
     - DOMAIN-SUFFIX,tr.nyacat.pw
-    - DOMAIN-SUFFIX,tracker.bittor.pw
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.bz
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.mywaifu.best
-    - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
     - DOMAIN-SUFFIX,tracker.skyts.net
+    - DOMAIN-SUFFIX,tracker.tritan.gg
     - DOMAIN-SUFFIX,tracker.waaa.moe
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
@@ -36,7 +35,6 @@ payload:
     - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker3.ctix.cn
     - DOMAIN-SUFFIX,vito-tracker.space
-    - DOMAIN-SUFFIX,www.torrentsnipe.info
     - DOMAIN-SUFFIX,www.wareztorrent.com
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
@@ -45,6 +43,7 @@ payload:
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.abiir.top
+    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.7471.top
     - DOMAIN-SUFFIX,tracker.bt4g.com
@@ -52,6 +51,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.kuroy.me
     - DOMAIN-SUFFIX,tracker.leechshield.link
     - DOMAIN-SUFFIX,tracker.manager.v6.navy
+    - DOMAIN-SUFFIX,tracker.moeblog.cn
     - DOMAIN-SUFFIX,tracker.moeking.me
     - DOMAIN-SUFFIX,tracker.nekomi.cn
     - DOMAIN-SUFFIX,tracker.pmman.tech
@@ -64,6 +64,7 @@ payload:
     - IP-CIDR6,2a03:7220:8083:cd00::1/128,no-resolve
     - IP-CIDR6,2a04:ac00:1:3dd8::1:2710/128,no-resolve
     - DOMAIN-SUFFIX,admin.52ywp.com
+    - DOMAIN-SUFFIX,anime-tracker.aruku.kro.kr
     - DOMAIN-SUFFIX,archive.torrentonline.cc
     - DOMAIN-SUFFIX,bandito.byterunner.io
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
@@ -87,16 +88,18 @@ payload:
     - DOMAIN-SUFFIX,retracker.hotplug.ru
     - DOMAIN-SUFFIX,seedpeer.net
     - DOMAIN-SUFFIX,t.overflow.biz
+    - DOMAIN-SUFFIX,torrent.bowed.net
     - DOMAIN-SUFFIX,torrentclub.online
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.btube3.com
-    - DOMAIN-SUFFIX,tr4ck3r.duckdns.org
     - DOMAIN-SUFFIX,tracker-udp.gbitt.info
     - DOMAIN-SUFFIX,tracker.004430.xyz
     - DOMAIN-SUFFIX,tracker.1h.is
+    - DOMAIN-SUFFIX,tracker.aruku.ovh
     - DOMAIN-SUFFIX,tracker.auctor.tv
     - DOMAIN-SUFFIX,tracker.bittor.pw
     - DOMAIN-SUFFIX,tracker.bluefrog.pw
+    - DOMAIN-SUFFIX,tracker.breizh.pm
     - DOMAIN-SUFFIX,tracker.corpscorp.online
     - DOMAIN-SUFFIX,tracker.ddunlimited.net
     - DOMAIN-SUFFIX,tracker.dler.com
@@ -119,7 +122,10 @@ payload:
     - DOMAIN-SUFFIX,tracker.srv00.com
     - DOMAIN-SUFFIX,tracker.startwork.cv
     - DOMAIN-SUFFIX,tracker.t-1.org
+    - DOMAIN-SUFFIX,tracker.therarbg.to
     - DOMAIN-SUFFIX,tracker.torrent.eu.org
+    - DOMAIN-SUFFIX,tracker.torrentclaw.com
+    - DOMAIN-SUFFIX,tracker.torrust-demo.com
     - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.wildkat.net
     - DOMAIN-SUFFIX,tracker.yume-hatsuyuki.moe
@@ -134,7 +140,6 @@ payload:
     - DOMAIN-SUFFIX,v6.vito-tracker.space
     - DOMAIN-SUFFIX,vito-tracker.duckdns.org
     - DOMAIN-SUFFIX,vito-tracker.space
-    - DOMAIN-SUFFIX,wepzone.net
     - DOMAIN-SUFFIX,whybother.torrentonline.cc
     - DOMAIN-SUFFIX,www.nartlof.com
     - DOMAIN-SUFFIX,yuptracker-eu.gaijinent.com
