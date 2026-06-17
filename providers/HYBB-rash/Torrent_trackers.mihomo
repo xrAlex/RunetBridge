@@ -15,22 +15,20 @@ payload:
     - DOMAIN-SUFFIX,nyaa.tracker.wf
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
     - DOMAIN-SUFFIX,t.overflow.biz
-    - DOMAIN-SUFFIX,torrent.hificode.in
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
+    - DOMAIN-SUFFIX,tr.kxmp.cf
     - DOMAIN-SUFFIX,tr.nyacat.pw
-    - DOMAIN-SUFFIX,tracker.bittor.pw
+    - DOMAIN-SUFFIX,tracker.23794.top
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.bz
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.lintk.me
     - DOMAIN-SUFFIX,tracker.mywaifu.best
+    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.privateseedbox.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
-    - DOMAIN-SUFFIX,tracker.skyts.net
     - DOMAIN-SUFFIX,tracker.waaa.moe
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
@@ -50,7 +48,6 @@ payload:
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.abiir.top
-    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tr.zukizuki.org
     - DOMAIN-SUFFIX,tracker.7471.top
@@ -86,7 +83,6 @@ payload:
     - DOMAIN-SUFFIX,ns575949.ip-51-222-82.net
     - DOMAIN-SUFFIX,obey.torrentonline.cc
     - DOMAIN-SUFFIX,open.demonii.com
-    - DOMAIN-SUFFIX,open.demonoid.ch
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,open.stealth.si
     - DOMAIN-SUFFIX,open.tracker.ink
@@ -121,7 +117,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.gmi.gd
     - DOMAIN-SUFFIX,tracker.hismz.cn
     - DOMAIN-SUFFIX,tracker.huadongblower.xyz
-    - DOMAIN-SUFFIX,tracker.iperson.xyz
     - DOMAIN-SUFFIX,tracker.opentorrent.top
     - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.peerfect.org
@@ -130,8 +125,8 @@ payload:
     - DOMAIN-SUFFIX,tracker.publictracker.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.riverarmy.xyz
+    - DOMAIN-SUFFIX,tracker.sharebro.in
     - DOMAIN-SUFFIX,tracker.skyts.net
-    - DOMAIN-SUFFIX,tracker.startwork.cv
     - DOMAIN-SUFFIX,tracker.t-1.org
     - DOMAIN-SUFFIX,tracker.teambelgium.net
     - DOMAIN-SUFFIX,tracker.theoks.net
