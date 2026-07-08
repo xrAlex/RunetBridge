@@ -2,42 +2,48 @@
 # DO NOT EDIT.
 payload:
     - DOMAIN-SUFFIX,004430.xyz
-    - DOMAIN-SUFFIX,0d.kebhana.mx
+    - DOMAIN-SUFFIX,0123456789nonexistent.com
+    - IP-CIDR,107.189.2.131/32,no-resolve
+    - IP-CIDR,132.243.161.144/32,no-resolve
     - DOMAIN-SUFFIX,1337.abcvg.info
     - IP-CIDR,207.241.226.111/32,no-resolve
     - IP-CIDR,207.241.231.226/32,no-resolve
-    - DOMAIN-SUFFIX,aboutbeautifulgallopinghorsesinthegreenpasture.online
     - DOMAIN-SUFFIX,announce.sktorrent.eu
+    - DOMAIN-SUFFIX,asiatorrent.giize.com
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
     - DOMAIN-SUFFIX,buny.uk
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
+    - DOMAIN-SUFFIX,jvavav.com
     - DOMAIN-SUFFIX,maxsrv.xyz
     - DOMAIN-SUFFIX,nyaa.tracker.wf
     - DOMAIN-SUFFIX,open.trackerlist.xyz
-    - DOMAIN-SUFFIX,retracker.spark-rostov.ru
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
+    - DOMAIN-SUFFIX,seeders-paradise.org
+    - DOMAIN-SUFFIX,shubt.net
     - DOMAIN-SUFFIX,t.overflow.biz
+    - DOMAIN-SUFFIX,torrent.hificode.in
     - DOMAIN-SUFFIX,torrentsmd.com
-    - DOMAIN-SUFFIX,tr.highstar.shop
     - DOMAIN-SUFFIX,tr.kxmp.cf
     - DOMAIN-SUFFIX,tr.nyacat.pw
+    - DOMAIN-SUFFIX,tracker.bt-hash.com
     - DOMAIN-SUFFIX,tracker.bt4g.com
     - DOMAIN-SUFFIX,tracker.cubonegro.org
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.dmcomic.org
     - DOMAIN-SUFFIX,tracker.lintk.me
+    - DOMAIN-SUFFIX,tracker.moxing.party
     - DOMAIN-SUFFIX,tracker.mywaifu.best
+    - DOMAIN-SUFFIX,tracker.opentorrent.top
     - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.privateseedbox.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
     - DOMAIN-SUFFIX,tracker.sbsub.com
-    - DOMAIN-SUFFIX,tracker.tritan.gg
+    - DOMAIN-SUFFIX,tracker.therarbg.to
     - DOMAIN-SUFFIX,tracker.vanitycore.co
     - DOMAIN-SUFFIX,tracker.waaa.moe
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
@@ -56,11 +62,10 @@ payload:
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,orgtgju.org
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
-    - DOMAIN-SUFFIX,shahidrazi.online
     - DOMAIN-SUFFIX,t.213891.xyz
-    - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,torrents.tmtime.dev
     - DOMAIN-SUFFIX,tr.abiir.top
+    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tr.zukizuki.org
     - DOMAIN-SUFFIX,tracker.7471.top
@@ -104,10 +109,8 @@ payload:
     - DOMAIN-SUFFIX,open.tracker.ink
     - DOMAIN-SUFFIX,opentor.org
     - DOMAIN-SUFFIX,p4p.arenabg.com
-    - DOMAIN-SUFFIX,rekcart.duckdns.org
     - DOMAIN-SUFFIX,retracker.hotplug.ru
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
-    - DOMAIN-SUFFIX,shahidrazi.online
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentclub.online
     - DOMAIN-SUFFIX,torrentclub.online
@@ -124,12 +127,10 @@ payload:
     - DOMAIN-SUFFIX,tracker.ddunlimited.net
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.ducks.party
     - DOMAIN-SUFFIX,tracker.filemail.com
     - DOMAIN-SUFFIX,tracker.flatuslifir.is
     - DOMAIN-SUFFIX,tracker.fnix.net
     - DOMAIN-SUFFIX,tracker.gmi.gd
-    - DOMAIN-SUFFIX,tracker.hismz.cn
     - DOMAIN-SUFFIX,tracker.ilibr.org
     - DOMAIN-SUFFIX,tracker.nexusstream.eu
     - DOMAIN-SUFFIX,tracker.nyaa.vc
@@ -138,7 +139,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.peerfect.org
     - DOMAIN-SUFFIX,tracker.playground.ru
-    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.publictracker.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.skyts.net
@@ -155,4 +155,5 @@ payload:
     - DOMAIN-SUFFIX,tracker4.itzmx.com
     - DOMAIN-SUFFIX,v6.vito-tracker.space
     - DOMAIN-SUFFIX,whybother.torrentonline.cc
+    - DOMAIN-SUFFIX,zer0day.ch
     - DOMAIN-SUFFIX,tracker.openwebtorrent.com
