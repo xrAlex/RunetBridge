@@ -2,9 +2,8 @@
 # DO NOT EDIT.
 payload:
     - DOMAIN-SUFFIX,004430.xyz
-    - DOMAIN-SUFFIX,0d.kebhana.mx
+    - DOMAIN-SUFFIX,0123456789nonexistent.com
     - IP-CIDR,107.189.2.131/32,no-resolve
-    - IP-CIDR,132.243.161.144/32,no-resolve
     - DOMAIN-SUFFIX,1337.abcvg.info
     - IP-CIDR,207.241.226.111/32,no-resolve
     - IP-CIDR,207.241.231.226/32,no-resolve
@@ -14,18 +13,13 @@ payload:
     - DOMAIN-SUFFIX,bt.poletracker.org
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
-    - DOMAIN-SUFFIX,buny.uk
-    - DOMAIN-SUFFIX,home.yxgz.club
+    - DOMAIN-SUFFIX,cn.pcfreetime.com
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
     - DOMAIN-SUFFIX,maxsrv.xyz
     - DOMAIN-SUFFIX,ns3109441.mypdns.org
     - DOMAIN-SUFFIX,nyaa.tracker.wf
+    - DOMAIN-SUFFIX,open.tracker.cl
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
-    - DOMAIN-SUFFIX,share.hkg-fansub.info
-    - DOMAIN-SUFFIX,shubt.net
-    - DOMAIN-SUFFIX,supertracker.cc.cd
-    - DOMAIN-SUFFIX,t.overflow.biz
-    - DOMAIN-SUFFIX,torrent.hificode.in
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.highstar.shop
     - DOMAIN-SUFFIX,tr.kxmp.cf
@@ -33,27 +27,23 @@ payload:
     - DOMAIN-SUFFIX,tracker.bittor.pw
     - DOMAIN-SUFFIX,tracker.bt-hash.com
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.corpscorp.online
+    - DOMAIN-SUFFIX,tracker.bz
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.dmcomic.org
+    - DOMAIN-SUFFIX,tracker.internetwarriors.net
     - DOMAIN-SUFFIX,tracker.mywaifu.best
     - DOMAIN-SUFFIX,tracker.opentorrent.top
-    - DOMAIN-SUFFIX,tracker.opentrackr.org
-    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.privateseedbox.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
     - DOMAIN-SUFFIX,tracker.therarbg.to
     - DOMAIN-SUFFIX,tracker.waaa.moe
-    - DOMAIN-SUFFIX,tracker.xiaoduola.xyz
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
     - DOMAIN-SUFFIX,tracker.zhuqiy.dgj055.icu
     - DOMAIN-SUFFIX,tracker1.itzmx.com
     - DOMAIN-SUFFIX,tracker2.dler.org
-    - DOMAIN-SUFFIX,tracker810.xyz
     - DOMAIN-SUFFIX,www.wareztorrent.com
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,021912.xyz
@@ -62,15 +52,16 @@ payload:
     - DOMAIN-SUFFIX,ht.therarbg.to
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,orgtgju.org
+    - DOMAIN-SUFFIX,php-bobcat.wasmer.app
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,shahidrazi.online
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,tr.abiir.top
-    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tr.zukizuki.org
     - DOMAIN-SUFFIX,tracker.7471.top
+    - DOMAIN-SUFFIX,tracker.adgk.net
     - DOMAIN-SUFFIX,tracker.anibt.net
     - DOMAIN-SUFFIX,tracker.bt4g.com
     - DOMAIN-SUFFIX,tracker.foreverpirates.co
@@ -105,6 +96,7 @@ payload:
     - DOMAIN-SUFFIX,open.demonoid.ch
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,open.stealth.si
+    - DOMAIN-SUFFIX,open.tracker.cl
     - DOMAIN-SUFFIX,open.tracker.ink
     - DOMAIN-SUFFIX,opentor.org
     - DOMAIN-SUFFIX,p4p.arenabg.com
@@ -128,7 +120,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.ducks.party
     - DOMAIN-SUFFIX,tracker.filemail.com
-    - DOMAIN-SUFFIX,tracker.flatuslifir.is
+    - DOMAIN-SUFFIX,tracker.fnix.net
     - DOMAIN-SUFFIX,tracker.gmi.gd
     - DOMAIN-SUFFIX,tracker.ilibr.org
     - DOMAIN-SUFFIX,tracker.nexusstream.eu
@@ -138,13 +130,14 @@ payload:
     - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.peerfect.org
     - DOMAIN-SUFFIX,tracker.playground.ru
+    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.publictracker.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.skynetcloud.site
     - DOMAIN-SUFFIX,tracker.skyts.net
     - DOMAIN-SUFFIX,tracker.teambelgium.net
+    - DOMAIN-SUFFIX,tracker.theoks.net
     - DOMAIN-SUFFIX,tracker.torrent.eu.org
-    - DOMAIN-SUFFIX,tracker.trackarr.org
     - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.wildkat.net
     - DOMAIN-SUFFIX,tracker1.itzmx.com
