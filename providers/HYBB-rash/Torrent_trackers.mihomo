@@ -10,41 +10,43 @@ payload:
     - DOMAIN-SUFFIX,announce.sktorrent.eu
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,bt1.archive.org
+    - DOMAIN-SUFFIX,bt1.xxxxbt.cc
     - DOMAIN-SUFFIX,bt2.archive.org
     - DOMAIN-SUFFIX,buny.uk
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
+    - DOMAIN-SUFFIX,jvavav.com
     - DOMAIN-SUFFIX,lucke.fenesisu.moe
-    - DOMAIN-SUFFIX,ns3109441.mypdns.org
     - DOMAIN-SUFFIX,nyaa.tracker.wf
     - DOMAIN-SUFFIX,open.trackerlist.xyz
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
     - DOMAIN-SUFFIX,t.overflow.biz
+    - DOMAIN-SUFFIX,torrent.hificode.in
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.kxmp.cf
     - DOMAIN-SUFFIX,tr.nyacat.pw
+    - DOMAIN-SUFFIX,tracker.bittor.pw
     - DOMAIN-SUFFIX,tracker.bt4g.com
-    - DOMAIN-SUFFIX,tracker.bz
-    - DOMAIN-SUFFIX,tracker.corpscorp.online
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
-    - DOMAIN-SUFFIX,tracker.dler.com
-    - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.dmcomic.org
-    - DOMAIN-SUFFIX,tracker.mywaifu.best
+    - DOMAIN-SUFFIX,tracker.ipv6tracker.org
+    - DOMAIN-SUFFIX,tracker.lintk.me
     - DOMAIN-SUFFIX,tracker.nexusstream.eu
+    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.privateseedbox.xyz
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.renfei.net
     - DOMAIN-SUFFIX,tracker.sbsub.com
     - DOMAIN-SUFFIX,tracker.waaa.moe
+    - DOMAIN-SUFFIX,tracker.xiaoduola.xyz
     - DOMAIN-SUFFIX,tracker.xn--djrq4gl4hvoi.top
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
     - DOMAIN-SUFFIX,tracker.zhuqiy.dgj055.icu
     - DOMAIN-SUFFIX,tracker1.itzmx.com
-    - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker810.xyz
     - DOMAIN-SUFFIX,www.wareztorrent.com
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1337.abcvg.info
+    - DOMAIN-SUFFIX,edgev.duckdns.org
+    - DOMAIN-SUFFIX,ht.therarbg.to
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,t.213891.xyz
@@ -74,6 +76,7 @@ payload:
     - DOMAIN-SUFFIX,anime-tracker.aruku.kro.kr
     - DOMAIN-SUFFIX,archive.torrentonline.cc
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
+    - DOMAIN-SUFFIX,edgev.duckdns.org
     - DOMAIN-SUFFIX,evan.im
     - DOMAIN-SUFFIX,exodus.desync.com
     - DOMAIN-SUFFIX,explodie.org
@@ -111,7 +114,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.corpscorp.online
     - DOMAIN-SUFFIX,tracker.ddunlimited.net
     - DOMAIN-SUFFIX,tracker.dler.com
-    - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.ducks.party
     - DOMAIN-SUFFIX,tracker.filemail.com
     - DOMAIN-SUFFIX,tracker.flatuslifir.is
@@ -130,11 +132,10 @@ payload:
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.skyts.net
     - DOMAIN-SUFFIX,tracker.teambelgium.net
-    - DOMAIN-SUFFIX,tracker.theoks.net
     - DOMAIN-SUFFIX,tracker.torrent.eu.org
+    - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.wildkat.net
     - DOMAIN-SUFFIX,tracker1.itzmx.com
-    - DOMAIN-SUFFIX,tracker2.dler.org
     - DOMAIN-SUFFIX,tracker2.itzmx.com
     - DOMAIN-SUFFIX,tracker3.itzmx.com
     - DOMAIN-SUFFIX,tracker4.itzmx.com
