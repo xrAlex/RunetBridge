@@ -2,19 +2,19 @@
 # DO NOT EDIT.
 payload:
     - DOMAIN-SUFFIX,004430.xyz
+    - DOMAIN-SUFFIX,0123456789nonexistent.com
     - IP-CIDR,107.189.2.131/32,no-resolve
     - DOMAIN-SUFFIX,1337.abcvg.info
     - IP-CIDR,207.241.226.111/32,no-resolve
     - IP-CIDR,207.241.231.226/32,no-resolve
     - DOMAIN-SUFFIX,announce.sktorrent.eu
-    - DOMAIN-SUFFIX,asiatorrent.giize.com
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,bt1.archive.org
     - DOMAIN-SUFFIX,bt2.archive.org
-    - DOMAIN-SUFFIX,ftp.pet
+    - DOMAIN-SUFFIX,buny.uk
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
     - DOMAIN-SUFFIX,nyaa.tracker.wf
-    - DOMAIN-SUFFIX,open.trackerlist.xyz
+    - DOMAIN-SUFFIX,retracker.spark-rostov.ru
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
@@ -22,7 +22,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
-    - DOMAIN-SUFFIX,tracker.lintk.me
+    - DOMAIN-SUFFIX,tracker.ipv6tracker.org
     - DOMAIN-SUFFIX,tracker.mywaifu.best
     - DOMAIN-SUFFIX,tracker.nexusstream.eu
     - DOMAIN-SUFFIX,tracker.opentrackr.org
@@ -46,6 +46,7 @@ payload:
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,tr.abiir.top
+    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.burnabyhighstar.com
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.7471.top
@@ -64,7 +65,6 @@ payload:
     - IP-CIDR6,2a03:7220:8083:cd00::1/128,no-resolve
     - IP-CIDR6,2a04:ac00:1:3dd8::1:2710/128,no-resolve
     - DOMAIN-SUFFIX,admin.52ywp.com
-    - DOMAIN-SUFFIX,archive.torrentonline.cc
     - DOMAIN-SUFFIX,bittorrent-tracker.e-n-c-r-y-p-t.net
     - DOMAIN-SUFFIX,evan.im
     - DOMAIN-SUFFIX,exodus.desync.com
@@ -85,6 +85,7 @@ payload:
     - DOMAIN-SUFFIX,rekcart.duckdns.org
     - DOMAIN-SUFFIX,retracker.hotplug.ru
     - DOMAIN-SUFFIX,retracker01-msk-virt.corbina.net
+    - DOMAIN-SUFFIX,seedpeer.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
     - DOMAIN-SUFFIX,tr3.ysagin.top
@@ -104,6 +105,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.ducks.party
     - DOMAIN-SUFFIX,tracker.farted.net
     - DOMAIN-SUFFIX,tracker.filemail.com
+    - DOMAIN-SUFFIX,tracker.flatuslifir.is
     - DOMAIN-SUFFIX,tracker.gmi.gd
     - DOMAIN-SUFFIX,tracker.govt.hu
     - DOMAIN-SUFFIX,tracker.ilibr.org
@@ -130,6 +132,7 @@ payload:
     - DOMAIN-SUFFIX,tracker3.itzmx.com
     - DOMAIN-SUFFIX,tracker4.itzmx.com
     - DOMAIN-SUFFIX,v6.vito-tracker.space
+    - DOMAIN-SUFFIX,whybother.torrentonline.cc
     - DOMAIN-SUFFIX,yuptracker-eu.gaijinent.com
     - DOMAIN-SUFFIX,zer0day.ch
     - DOMAIN-SUFFIX,tracker.openwebtorrent.com
