@@ -16,8 +16,8 @@ payload:
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrentsmd.com
     - DOMAIN-SUFFIX,tr.nyacat.pw
-    - DOMAIN-SUFFIX,tracker.bittor.pw
-    - DOMAIN-SUFFIX,tracker.bt4g.com
+    - DOMAIN-SUFFIX,tracker.23794.top
+    - DOMAIN-SUFFIX,tracker.dhitechnical.com
     - DOMAIN-SUFFIX,tracker.dler.com
     - DOMAIN-SUFFIX,tracker.dler.org
     - DOMAIN-SUFFIX,tracker.mywaifu.best
@@ -34,7 +34,6 @@ payload:
     - DOMAIN-SUFFIX,004430.xyz
     - DOMAIN-SUFFIX,1.tracker.eu.org
     - DOMAIN-SUFFIX,1337.abcvg.info
-    - DOMAIN-SUFFIX,ht.therarbg.to
     - DOMAIN-SUFFIX,open.ftorrent.com
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,tr.abiir.top
@@ -42,7 +41,6 @@ payload:
     - DOMAIN-SUFFIX,tr.burnabyhighstar.com
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.7471.top
-    - DOMAIN-SUFFIX,tracker.bt4g.com
     - DOMAIN-SUFFIX,tracker.foreverpirates.co
     - DOMAIN-SUFFIX,tracker.kuroy.me
     - DOMAIN-SUFFIX,tracker.lenition.de
@@ -81,11 +79,11 @@ payload:
     - DOMAIN-SUFFIX,seedpeer.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
+    - DOMAIN-SUFFIX,tr.btube3.com
     - DOMAIN-SUFFIX,tr3.ysagin.top
     - DOMAIN-SUFFIX,tr4ck3r.duckdns.org
     - DOMAIN-SUFFIX,tracker-udp.gbitt.info
     - DOMAIN-SUFFIX,tracker.004430.xyz
-    - DOMAIN-SUFFIX,tracker.0x7c0.com
     - DOMAIN-SUFFIX,tracker.aruku.ovh
     - DOMAIN-SUFFIX,tracker.bittor.pw
     - DOMAIN-SUFFIX,tracker.breizh.pm
@@ -98,18 +96,14 @@ payload:
     - DOMAIN-SUFFIX,tracker.farted.net
     - DOMAIN-SUFFIX,tracker.filemail.com
     - DOMAIN-SUFFIX,tracker.flatuslifir.is
-    - DOMAIN-SUFFIX,tracker.fnix.net
-    - DOMAIN-SUFFIX,tracker.gmi.gd
     - DOMAIN-SUFFIX,tracker.ilibr.org
     - DOMAIN-SUFFIX,tracker.k.vu
     - DOMAIN-SUFFIX,tracker.nyaa.net
     - DOMAIN-SUFFIX,tracker.nyaa.vc
-    - DOMAIN-SUFFIX,tracker.opentorrent.top
     - DOMAIN-SUFFIX,tracker.opentrackr.com
     - DOMAIN-SUFFIX,tracker.opentrackr.org
     - DOMAIN-SUFFIX,tracker.peerfect.org
     - DOMAIN-SUFFIX,tracker.playground.ru
-    - DOMAIN-SUFFIX,tracker.plx.im
     - DOMAIN-SUFFIX,tracker.qu.ax
     - DOMAIN-SUFFIX,tracker.skyts.net
     - DOMAIN-SUFFIX,tracker.teambelgium.net
