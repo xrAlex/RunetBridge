@@ -37,7 +37,6 @@ payload:
     - DOMAIN-SUFFIX,pybittrack.retiolus.net
     - DOMAIN-SUFFIX,t.213891.xyz
     - DOMAIN-SUFFIX,tr.abiir.top
-    - DOMAIN-SUFFIX,tr.abir.ga
     - DOMAIN-SUFFIX,tr.burnabyhighstar.com
     - DOMAIN-SUFFIX,tr.nyacat.pw
     - DOMAIN-SUFFIX,tracker.7471.top
@@ -45,7 +44,6 @@ payload:
     - DOMAIN-SUFFIX,tracker.kuroy.me
     - DOMAIN-SUFFIX,tracker.lenition.de
     - DOMAIN-SUFFIX,tracker.nekomi.cn
-    - DOMAIN-SUFFIX,tracker.onetracker.net
     - DOMAIN-SUFFIX,tracker.pmman.tech
     - DOMAIN-SUFFIX,tracker.qingwapt.org
     - DOMAIN-SUFFIX,tracker.zhuqiy.com
@@ -63,7 +61,6 @@ payload:
     - DOMAIN-SUFFIX,ipv4announce.sktorrent.eu
     - DOMAIN-SUFFIX,ipv6.govt.hu
     - DOMAIN-SUFFIX,kolankoalastree.newtrackon.co.nz
-    - DOMAIN-SUFFIX,kolanopentracker.airdns.org
     - DOMAIN-SUFFIX,mail.segso.net
     - DOMAIN-SUFFIX,martin-gebhardt.eu
     - DOMAIN-SUFFIX,ns575949.ip-51-222-82.net
@@ -80,6 +77,7 @@ payload:
     - DOMAIN-SUFFIX,seedpeer.net
     - DOMAIN-SUFFIX,t.overflow.biz
     - DOMAIN-SUFFIX,torrent.tracker.durukanbal.com
+    - DOMAIN-SUFFIX,tr3.ysagin.top
     - DOMAIN-SUFFIX,tr4ck3r.duckdns.org
     - DOMAIN-SUFFIX,tracker-udp.gbitt.info
     - DOMAIN-SUFFIX,tracker.004430.xyz
@@ -93,6 +91,7 @@ payload:
     - DOMAIN-SUFFIX,tracker.ducks.party
     - DOMAIN-SUFFIX,tracker.farted.net
     - DOMAIN-SUFFIX,tracker.filemail.com
+    - DOMAIN-SUFFIX,tracker.fnix.net
     - DOMAIN-SUFFIX,tracker.ilibr.org
     - DOMAIN-SUFFIX,tracker.k.vu
     - DOMAIN-SUFFIX,tracker.nyaa.net
@@ -103,11 +102,11 @@ payload:
     - DOMAIN-SUFFIX,tracker.peerfect.org
     - DOMAIN-SUFFIX,tracker.playground.ru
     - DOMAIN-SUFFIX,tracker.qu.ax
+    - DOMAIN-SUFFIX,tracker.skynetcloud.site
     - DOMAIN-SUFFIX,tracker.skyts.net
     - DOMAIN-SUFFIX,tracker.teambelgium.net
     - DOMAIN-SUFFIX,tracker.torrent.eu.org
     - DOMAIN-SUFFIX,tracker.torrents.observer
-    - DOMAIN-SUFFIX,tracker.tryhackx.org
     - DOMAIN-SUFFIX,tracker.wildkat.net
     - DOMAIN-SUFFIX,tracker.willy.pro
     - DOMAIN-SUFFIX,tracker.yume-hatsuyuki.moe
